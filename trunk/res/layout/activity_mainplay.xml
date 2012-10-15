@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <RelativeLayout 
+        android:id="@+id/rlTitleBar"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content" >  
+	    <TextView
+	        android:id="@+id/tvSongName"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22dp"
+	        android:textColor="#7D7DFF"
+	        android:layout_centerHorizontal="true" />
+	    <TextView
+	        android:id="@+id/tvArtist"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/tvSongName"
+	        android:textSize="19dp"
+	        android:textColor="#5A5AAD"
+	        android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/gAlbum"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rlTitleBar"
+        android:scaleType="fitCenter"
+        android:src="@drawable/defaultalbumimage"
+        android:contentDescription="@string/image_descriptionr" />
+    
+    <RelativeLayout 
+        android:id="@+id/rlLyrics"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/tvLyrics1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="#7B7B7B"
+	        android:layout_centerHorizontal="true"/>
+	    <TextView
+	        android:id="@+id/tvLyrics2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/tvLyrics1"
+	        android:textColor="#0080FF"
+	        android:layout_centerHorizontal="true" />
+	    <TextView
+	        android:id="@+id/tvLyrics3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/tvLyrics2"
+	        android:textColor="#7B7B7B"
+	        android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:id="@+id/rlSeekBar"
+        android:layout_above="@id/rlLyrics"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" >
+	    <TextView 
+	        android:id="@+id/leftTime"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:paddingLeft="6dp"
+	        android:textSize="12dp"
+	        android:textColor="#6A6AFF" />
+	    <TextView 
+	        android:id="@+id/rightTime"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_alignParentRight="true"
+	    	android:paddingRight="6dp"
+	        android:textSize="12dp"
+	        android:textColor="#B15BFF" />
+	    <SeekBar 
+	        android:id="@+id/sbPlayCtrl"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:maxHeight="5dp"
+	    	android:paddingLeft="6dp"
+	    	android:paddingRight="6dp"
+	    	android:progressDrawable="@drawable/seekbar_style"
+	    	android:thumb="@drawable/thumb_selector"
+	    	android:layout_below="@id/leftTime" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rlMainCtrl"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_above="@id/rlSeekBar" >
+	    <ToggleButton
+	        android:id="@+id/btnPlay"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minHeight="60dp"
+	        android:minWidth="60dp"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentBottom="true"
+	        android:background="#00000000"
+	        android:textOn=""
+	        android:textOff=""
+	        android:button="@drawable/btn_play_selector" />
+	    <ImageButton
+	        android:id="@+id/btnLast"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+        	android:src="@drawable/btn_last_selector"
+	        android:contentDescription="@string/image_descriptionr"
+	        android:layout_toLeftOf="@id/btnPlay"
+	        android:layout_marginRight="20dp"
+	        android:layout_alignBottom="@id/btnPlay"
+        	android:background="#00000000" />
+	    <ImageButton
+	        android:id="@+id/btnNext"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+        	android:src="@drawable/btn_next_selector"
+        	android:layout_toRightOf="@id/btnPlay"
+        	android:layout_marginLeft="20dp"
+        	android:layout_alignBottom="@id/btnPlay"
+        	android:background="#00000000"
+	        android:contentDescription="@string/image_descriptionr" />
+	    <ImageView 
+	        android:id="@+id/ivCirculMode"
+	        android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@id/btnNext"
+		    android:layout_alignBottom="@id/btnNext"
+		    android:layout_alignTop="@id/btnNext"
+		    android:layout_marginRight="5dp"
+		    android:scaleType="centerInside"
+		    android:src="@drawable/circul_list_once"
+		    android:contentDescription="@string/image_descriptionr" >
+	    </ImageView>
+	    <ImageView 
+	        android:id="@+id/ivSonglist"
+	        android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_toLeftOf="@id/btnLast"
+		    android:layout_alignBottom="@id/btnLast"
+		    android:layout_alignTop="@id/btnLast"
+		    android:layout_marginLeft="5dp"
+		    android:scaleType="centerInside"
+		    android:src="@drawable/btn_minilist_selector"
+		    android:contentDescription="@string/image_descriptionr" >
+	    </ImageView>
+    </RelativeLayout>
+
+</RelativeLayout>

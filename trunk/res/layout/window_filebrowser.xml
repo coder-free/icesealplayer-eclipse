@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/desk_widget_bg" >
+    
+    <LinearLayout 
+        android:id="@+id/llBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center" >
+        
+	    <Button 
+	        android:id="@+id/btnOK"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/btn_ok" />
+	    <Button 
+	        android:id="@+id/btnAll"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/btn_scanall" />
+        
+    </LinearLayout>
+    
+    <com.zbf.iceseal.view.MyFileBrowser
+        android:id="@+id/myFileBrowser"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@drawable/list_divider_bg"
+        android:dividerHeight="1dp"
+        android:cacheColorHint="#00000000"
+        android:layout_above="@id/llBtn" />
+
+</RelativeLayout>

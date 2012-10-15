@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+    <ImageView 
+        android:id="@+id/ivsongpic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/image_descriptionr"
+        android:background="@drawable/listitem_image_bg"
+        android:src="@drawable/defaultalbumimage" />
+    
+    <TextView 
+        android:id="@+id/tvsongname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivsongpic"
+        android:layout_toLeftOf="@+id/cbislike"
+        android:textColor="#ff000000"
+        android:textSize="18dp" />
+    
+    
+    <TextView 
+        android:id="@+id/tvsongartist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvsongname"
+        android:textColor="#ff000000"
+        android:layout_toRightOf="@id/ivsongpic"
+        android:textSize="12dp" />
+    
+    <CheckBox 
+        android:id="@+id/cbislike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@id/ivsongpic"
+        android:layout_alignBottom="@id/ivsongpic"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        style="@style/cbislike"
+        android:layout_marginLeft="3dp" />
+    
+    <TextView 
+        android:id="@+id/tvsonglength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvsongname"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/cbislike"
+        android:textColor="#af000000"
+        android:textSize="12dp" />
+    
+    <TextView 
+        android:id="@+id/tvsongpath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvsongartist"
+        android:layout_toRightOf="@id/ivsongpic"
+        android:layout_toLeftOf="@id/cbislike"
+        android:textSize="12dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textColor="#ff000000" />
+    
+    <View 
+        android:id="@+id/vdivider"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@drawable/list_divider_bg"
+        android:layout_below="@id/ivsongpic"/>
+
+</RelativeLayout>
