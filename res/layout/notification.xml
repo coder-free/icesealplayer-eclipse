@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlcurplay"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentBottom="true"
+    android:background="#7f000000" >
+    
+    <ImageView 
+        android:id="@+id/ivCurplay"
+        android:layout_width="60dp"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/image_descriptionr"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/defaultalbumimage"
+        android:layout_margin="2dp" />
+
+    <ImageView 
+        android:id="@+id/ivExit"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/image_descriptionr"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/notification_cancel"
+        android:scaleType="centerInside"
+        android:layout_margin="2dp" />
+    
+    <RelativeLayout 
+        android:id="@+id/rlsubcurplay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivCurplay"
+        android:layout_alignTop="@id/ivCurplay"
+        android:layout_alignBottom="@id/ivCurplay"
+        android:layout_toLeftOf="@id/ivExit"
+        android:paddingLeft="5dp"
+        android:gravity="center_vertical" >
+
+        <TextView 
+            android:id="@+id/playerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@android:color/white"
+            android:singleLine="true"
+            android:text="@string/player_name" />
+        <TextView 
+            android:id="@+id/tvCurplayName_Artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/playerName"
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
+        
+    </RelativeLayout>
+</RelativeLayout>

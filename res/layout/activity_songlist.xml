@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white" >
+
+    <ListView
+        android:id="@+id/lvSongList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="true"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:background="#3f000000"
+        android:padding="3dp"
+        android:scrollbars="@null"
+        android:longClickable="true" />
+    
+    <RelativeLayout 
+        android:id="@+id/rlTitleBar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingBottom="5dp"
+	    android:background="@drawable/songlist_title_bg" >
+	
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_selector" />
+        
+        <Button 
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/menu_selector"/>
+        
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_toLeftOf="@id/btnMenu"
+            android:layout_toRightOf="@id/btnBack"
+        	android:singleLine="true"
+        	android:layout_alignParentTop="true"
+        	android:layout_marginTop="3dp"
+        	android:ellipsize="marquee"
+        	android:marqueeRepeatLimit="marquee_forever"
+        	android:textColor="#ffdfdfdf"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_toLeftOf="@id/btnMenu"
+            android:layout_toRightOf="@id/btnBack"
+        	android:singleLine="true"
+        	android:ellipsize="marquee"
+        	android:layout_below="@id/tvType"
+        	android:marqueeRepeatLimit="marquee_forever"
+        	android:textColor="#ffdfdfdf"
+        	android:textSize="18dp"
+            android:gravity="center" />
+    </RelativeLayout>
+	
+    <ImageView
+        android:id="@+id/alphaBetscroller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/rlTitleBar"
+        android:paddingRight="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/alphabet_scroller_bg"
+        android:visibility="gone" />
+
+</RelativeLayout>

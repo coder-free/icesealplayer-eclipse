@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp" >
+ 
+    <TextView 
+        android:id="@+id/tvCurplayName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffefefef"
+        android:singleLine="true"
+        android:textSize="18dp" />
+    <TextView 
+        android:id="@+id/tvCurplayArtist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCurplayName"
+        android:textColor="#ffefefef"
+        android:singleLine="true"
+        android:textSize="12dp" />
+    <TextView 
+        android:id="@+id/tvCurplayPath"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCurplayArtist"
+        android:textSize="12dp"
+        android:singleLine="true"
+        android:ellipsize="start"
+        android:textColor="#ffdfdfdf" />
+    
+</RelativeLayout>

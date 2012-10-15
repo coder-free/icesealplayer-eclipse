@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <RelativeLayout 
+	    android:id="@+id/rlCurplay"
+	    android:layout_width="fill_parent"
+	    android:layout_height="66dp"
+	    android:layout_alignParentBottom="true"
+	    android:paddingTop="2dp"
+	    android:background="@drawable/base_curplay_bg" >
+	    
+	    <ProgressBar 
+	        style="@android:style/Widget.ProgressBar.Horizontal"
+	        android:id="@+id/pbCurplay"
+	        android:layout_width="fill_parent"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginTop="2dp"
+	        android:layout_height="2dp"
+	        android:progressDrawable="@drawable/progress_style"
+	        android:max="1000" />
+	    
+	    <ImageView 
+	        android:id="@+id/ivCurplay"
+	        android:layout_below="@id/pbCurplay"
+	        android:layout_width="60dp"
+	        android:layout_height="60dp"
+	        android:contentDescription="@string/image_descriptionr"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/defaultalbumimage"
+	        android:layout_margin="2dp"
+	        android:scaleType="fitCenter" />
+	    
+	    <ToggleButton 
+	        android:id="@+id/btnCurplay"
+	        android:layout_below="@id/pbCurplay"
+	        android:layout_width="60dp"
+	        android:layout_height="60dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:button="@drawable/btn_play_selector"
+	        android:textOn=""
+	        android:textOff=""
+	        android:background="#00000000"
+	        android:layout_margin="2dp" />
+	    <!-- 
+	    <android.support.v4.view.ViewPager 
+	        android:id="@+id/vpCurplayText"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@id/ivCurplay"
+	        android:layout_alignBottom="@id/ivCurplay"
+	        android:layout_toRightOf="@id/ivCurplay"
+	        android:layout_toLeftOf="@id/btnCurplay"
+	        android:layout_gravity="center"
+        	android:flipInterval="30"
+        	android:persistentDrawingCache="animation" />
+        	
+        	 -->
+	    <com.zbf.iceseal.view.SpecialGallery 
+	        android:id="@+id/sgCurplayText"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@id/ivCurplay"
+	        android:layout_alignBottom="@id/ivCurplay"
+	        android:layout_toRightOf="@id/ivCurplay"
+	        android:layout_toLeftOf="@id/btnCurplay"
+	        android:layout_gravity="center"
+	        android:soundEffectsEnabled="false"
+	        android:focusableInTouchMode="false"
+        	android:spacing="0dip" />
+	</RelativeLayout>
+
+</RelativeLayout>

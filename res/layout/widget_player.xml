@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="3dp"
+    android:background="@drawable/desk_widget_bg" >
+    <RelativeLayout 
+        android:id="@+id/rlMainCtrl"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="6dp"
+    	android:layout_alignParentBottom="true" >
+	    <ProgressBar 
+	        style="@android:style/Widget.ProgressBar.Horizontal"
+	        android:id="@+id/sbPlayCtrl"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="5dp"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	    	android:progressDrawable="@drawable/progress_style"
+	    	android:max="1000" />
+	    <ImageView
+	        android:id="@+id/btnPlay"
+	        style="@android:style/Widget.ImageWell"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@id/sbPlayCtrl"
+	        android:background="#00000000"
+	        android:contentDescription="@string/image_descriptionr"
+	        android:src="@drawable/btn_start_selector" />
+	    <ImageView
+	        android:id="@+id/btnLast"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="@string/image_descriptionr"
+	        android:layout_toLeftOf="@id/btnPlay"
+	        android:layout_marginRight="20dp"
+	        android:layout_alignBottom="@id/btnPlay"
+        	android:src="@drawable/btn_last_selector" />
+	    <ImageView
+	        android:id="@+id/btnNext"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+        	android:layout_toRightOf="@id/btnPlay"
+        	android:layout_marginLeft="20dp"
+        	android:layout_alignBottom="@id/btnPlay"
+	        android:contentDescription="@string/image_descriptionr"
+        	android:src="@drawable/btn_next_selector" />
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/leftTime"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="6dp"
+        android:textSize="12dp"
+        android:textColor="#cfcfcf"
+    	android:layout_above="@id/rlMainCtrl" />
+    <TextView 
+        android:id="@+id/rightTime"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentRight="true"
+    	android:paddingRight="6dp"
+        android:textSize="12dp"
+        android:textColor="#cfcfcf"
+    	android:layout_above="@id/rlMainCtrl" />
+    <ImageView 
+        android:id="@+id/ivCirculMode"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="10dp"
+	    android:padding="15dp"
+	    android:scaleType="centerInside"
+	    android:src="@drawable/playmode_circulation"
+	    android:contentDescription="@string/image_descriptionr" />
+    <ImageView 
+        android:id="@+id/ivSonglist"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:padding="15dp"
+	    android:layout_marginLeft="10dp"
+	    android:scaleType="centerInside"
+	    android:src="@drawable/btn_minilist_selector"
+	    android:contentDescription="@string/image_descriptionr" />
+    
+    <ImageView
+        android:id="@+id/gAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/ivCirculMode"
+        android:layout_toRightOf="@id/ivSonglist"
+        android:layout_above="@id/rlMainCtrl"
+        android:scaleType="fitCenter"
+        android:src="@drawable/defaultalbumimage"
+        android:contentDescription="@string/image_descriptionr" />
+    
+    <TextView
+        android:id="@+id/tvArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/gAlbum"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dp"
+        android:textColor="#afdfdfdf"
+        android:gravity="center_horizontal" />
+    
+    <TextView
+        android:id="@+id/tvSongName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tvArtist"
+        android:textSize="18dp"
+        android:textColor="#afefefef"
+        android:layout_centerHorizontal="true" />
+    
+</RelativeLayout>
+    <!-- 
+    
+    
+    
+    
+    
+    <RelativeLayout 
+        android:id="@+id/rlLyrics"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/tvLyrics1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="#7B7B7B"
+	        android:layout_centerHorizontal="true"/>
+	    <TextView
+	        android:id="@+id/tvLyrics2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/tvLyrics1"
+	        android:textColor="#0080FF"
+	        android:layout_centerHorizontal="true" />
+	    <TextView
+	        android:id="@+id/tvLyrics3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/tvLyrics2"
+	        android:textColor="#7B7B7B"
+	        android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+-->
+

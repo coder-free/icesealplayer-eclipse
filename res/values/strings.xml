@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">IceSeal</string>
+    <string name="logoImage">logoImage</string>
+    <string name="playing">正在播放歌曲…</string>
+    <string name="menu_settings">设置</string>
+    <string name="listname_playlist">播放列表</string>
+    <string name="listname_folder">文件夹</string>
+    <string name="listname_genre">流派</string>
+    <string name="listname_album">专辑</string>
+    <string name="listname_artist">艺术家</string>
+    <string name="image_descriptionr">image</string>
+    <string name="btn_ok">确定</string>
+    <string name="btn_scanall">扫描全盘</string>
+    <string name="btn_complete">完成</string>
+    <string name="btn_back">返回</string>
+    <string name="btn_menu">菜单</string>
+    <string name="desktop_label">MiniIceSeal</string>
+    <string name="player_name">IceSealPlayer</string>
+</resources>
