@@ -705,7 +705,7 @@ public class MainplayActivity extends BaseActivity {
 		});
 		WindowManager.LayoutParams p = new WindowManager.LayoutParams();
 		p.gravity = Gravity.CENTER;
-		float h = wm.getDefaultDisplay().getHeight() * 0.8f;
+		float h = wm.getDefaultDisplay().getHeight() * 0.7f;
 		float w = wm.getDefaultDisplay().getWidth() * 0.9f;
 		p.width = (int) w;
 		p.height = (int) h;
