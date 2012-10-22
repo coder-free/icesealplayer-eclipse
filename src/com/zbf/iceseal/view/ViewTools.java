@@ -111,7 +111,7 @@ public class ViewTools {
 		p.flags = WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 		p.type = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
 		wm.addView(fileSelectView, p);
-	}
+	} 
 	
 	public interface OnFileSelectButtonClickListener {
 		public void onFileSelectButtonClick(ArrayList<String> selectedPaths);
