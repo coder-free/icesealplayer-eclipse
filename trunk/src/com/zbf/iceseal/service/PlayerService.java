@@ -40,7 +40,7 @@ public class PlayerService extends Service implements OnPreparedListener, OnComp
 	
 	public List<SongBean> songlist;
 	private PlayerState state;
-	private MediaPlayer mPlayer = new MediaPlayer();
+	public static MediaPlayer mPlayer = new MediaPlayer();
 	private boolean isReady;
 	private RemoteViews notificationViews;
 	private Notification notification;
