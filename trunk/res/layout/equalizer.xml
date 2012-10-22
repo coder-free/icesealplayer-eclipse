@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/llEqualizer"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlEqualizer"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#0FF0FF"
-    android:padding="18dp" >
+    android:background="@drawable/desk_widget_bg" >
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/llEqualizer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#0FF0FF"
+        android:orientation="vertical"
+        android:padding="18dp" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnSure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消" />
+    </LinearLayout>
+
+</RelativeLayout>
