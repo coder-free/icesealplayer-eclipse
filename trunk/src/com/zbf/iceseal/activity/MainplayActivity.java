@@ -33,6 +33,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -54,6 +55,7 @@ import com.zbf.iceseal.util.CommonData;
 import com.zbf.iceseal.util.ImageTools;
 import com.zbf.iceseal.util.UtilTools;
 import com.zbf.iceseal.view.ViewTools;
+import com.zbf.iceseal.view.ViewTools.OnFileSelectButtonClickListener;
 
 public class MainplayActivity extends BaseActivity {
 
@@ -86,11 +88,7 @@ public class MainplayActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setVolumeControlStream(AudioManager.STREAM_MUSIC);
-
 		init(false);
-		// llEqualizer.setOrientation(LinearLayout.VERTICAL);
-//		
-//		setupVisualizerFxAndUi(llMainEqualizer);
 	}
 
 	@Override
@@ -643,7 +641,20 @@ public class MainplayActivity extends BaseActivity {
 //			ViewTools.createEqualizerWindow(mContext, rlPlay, 1);
 
 			setVolumeControlStream(AudioManager.STREAM_MUSIC);
-			createEqualizerWindow();
+			createEqualizerWindow(new OnButtonClickListener() {
+				
+				@Override
+				public void onSureButtonClick() {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onCancelButtonClick() {
+					// TODO Auto-generated method stub
+					
+				}
+			});
 			mVisualizer.setEnabled(true);
 			PlayerService.mPlayer
 					.setOnCompletionListener(new OnCompletionListener() {
@@ -662,19 +673,39 @@ public class MainplayActivity extends BaseActivity {
 		return super.onMenuItemSelected(featureId, item);
 	}
 
-	public  void createEqualizerWindow() {
+	public  void createEqualizerWindow(final OnButtonClickListener listener) {
 
 		final WindowManager wm = (WindowManager) mContext
 				.getSystemService(Service.WINDOW_SERVICE);
 		LayoutInflater inflater = (LayoutInflater) mContext
 				.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
 		final View equalizerView = inflater.inflate(R.layout.equalizer, null);
+		RelativeLayout rlEqualizer = (RelativeLayout) equalizerView.findViewById(R.id.rlEqualizer);
+
 		LinearLayout llEqualizer = (LinearLayout) equalizerView.findViewById(R.id.llEqualizer);
 		setupVisualizerFxAndUi(llEqualizer);
 		setupEqualizeFxAndUi(llEqualizer);
+		Button btnSure = (Button) rlEqualizer.findViewById(R.id.btnSure);
+		Button btnCancel = (Button) rlEqualizer.findViewById(R.id.btnCancel);
+		btnSure.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				wm.removeView(equalizerView);
+				mVisualizer.release();
+				listener.onCancelButtonClick();
+			}
+		});
+		btnCancel.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				wm.removeView(equalizerView);
+				mVisualizer.release();
+				listener.onCancelButtonClick();
+			}
+		});
 		WindowManager.LayoutParams p = new WindowManager.LayoutParams();
 		p.gravity = Gravity.CENTER;
-		float h = wm.getDefaultDisplay().getHeight() * 0.6f;
+		float h = wm.getDefaultDisplay().getHeight() * 0.8f;
 		float w = wm.getDefaultDisplay().getWidth() * 0.9f;
 		p.width = (int) w;
 		p.height = (int) h;
@@ -684,6 +715,12 @@ public class MainplayActivity extends BaseActivity {
 				| WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 		p.type = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
 		wm.addView(equalizerView, p);
-		
 	}
+	
+
+	public interface OnButtonClickListener {
+		public void onSureButtonClick();
+		public void onCancelButtonClick();
+	}
+	
 }
