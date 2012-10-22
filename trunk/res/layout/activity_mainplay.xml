@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlPlay"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF" >
@@ -43,11 +44,25 @@
         android:src="@drawable/defaultalbumimage" />
 
     <RelativeLayout
+        android:id="@+id/rlEqualizer"
+        android:layout_width="fill_parent"
+        android:layout_height="160dip"
+        android:layout_below="@id/rlTitleBar" >
+
+        <LinearLayout
+            android:id="@+id/llMainEqualizer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/rlLyrics"
         android:layout_width="fill_parent"
         android:layout_height="180dip"
         android:layout_above="@id/rlLyrics"
-        android:layout_below="@id/rlTitleBar"
+        android:layout_below="@id/rlEqualizer"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="60dp" >
 
