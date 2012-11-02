@@ -7,7 +7,7 @@ public interface ID3v1 {
 	String getTrack();
 	void setTrack(String track);
 	
-	String getArtist();
+	String getArtist(); 
 	void setArtist(String artist);
 	
 	String getTitle();
